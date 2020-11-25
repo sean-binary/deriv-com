@@ -85,7 +85,7 @@ TabPanel.propTypes = {
 const Tabs = ({ children, tab_break, tab_list }) => {
     const [selected_tab, setSelectedTab] = useState(0)
     const [active_tab, setActiveTab] = useTabState(['clients', 'business-partners'])
-    
+
     useEffect(() => {
         setSelectedTab(tab_list.indexOf(active_tab))
     }, [active_tab])
