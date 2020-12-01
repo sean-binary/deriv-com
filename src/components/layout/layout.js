@@ -17,7 +17,7 @@ import { DerivStore } from 'store'
 const LiveChat = Loadable(() => import('./livechat'))
 
 const Main = styled.main`
-    padding-top: ${(props) => props.padding_top || '7rem'};
+    margin-top: ${(props) => props.margin_top || '7rem'};
     background: var(--color-white);
     height: 100%;
     position: relative;
@@ -32,7 +32,7 @@ const Layout = ({
     children,
     type,
     interim_type,
-    padding_top,
+    margin_top,
     no_login_signup,
     no_live_chat,
     nav_type,
@@ -117,7 +117,7 @@ const Layout = ({
             LC_API={LC_API}
         >
             {Navigation}
-            <Main padding_top={padding_top} is_static={is_static}>
+            <Main margin_top={margin_top} is_static={is_static}>
                 {children}
             </Main>
             {show_cookie_banner && (
@@ -152,10 +152,10 @@ const Layout = ({
 Layout.propTypes = {
     children: PropTypes.node.isRequired,
     interim_type: PropTypes.string,
+    margin_top: PropTypes.string,
     nav_type: PropTypes.string,
     no_live_chat: PropTypes.bool,
     no_login_signup: PropTypes.bool,
-    padding_top: PropTypes.string,
     type: PropTypes.string,
 }
 

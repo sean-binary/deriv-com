@@ -45,7 +45,8 @@ const getPropertyValue = (obj, k) => {
     // else return clone of object to avoid overwriting data
     return obj ? cloneObject(obj[keys[0]]) : undefined
 }
-const getLocationHash = () => (isBrowser() && location.hash ? location.hash.slice(1) : '')
+const getLocationHash = () =>
+    isBrowser() && location.hash ? location.hash.slice(1).replace(/(\/)$/g, '') : ''
 
 const setLocationHash = (tab) => {
     if (isBrowser()) {
